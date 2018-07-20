@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+////    return view('welcome');
+//    echo "laravel";
+//});
+// 2nd Arg        Class             @ method
+Route::get('/' , 'HomePageController@homePage');
+//Route::get('/register' , 'HomePageController@homePage');

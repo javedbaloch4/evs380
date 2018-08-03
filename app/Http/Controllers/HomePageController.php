@@ -8,6 +8,8 @@ class HomePageController extends ViewComposingController
 {
     public function homePage(){
         
+        
+        
         return $this->buildTemplate('home');
         
     }

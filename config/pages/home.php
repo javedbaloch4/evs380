@@ -1,8 +1,7 @@
 <?php
 
-
 return [
-    'layout' => '',
+    'layout' => 'layouts.layout1',
     'headerCss' => [
 //        'home',
         'common',
@@ -11,32 +10,30 @@ return [
         'home',
         'common',
     ],
+    'headSection' => [
+        'head'
+    ],
     'headerSection' => [
-      'head',  
-      'navigation',  
-      'slider',  
+        'logo_sec',
+        'navigation',
     ],
     'leftSection' => [
-       
+        'slider'
     ],
     'rightSection' => [
-       
+        'logo_sec'
     ],
     'mainSection' => [
-       
+        'products'
     ],
     'bottomSection' => [
-       
+        '6'
     ],
     'footerSection' => [
-       
     ],
     'footerCss' => [
-
     ],
     'footerJs' => [
-
     ],
 ];
-
 ?>

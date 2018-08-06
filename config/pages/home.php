@@ -1,14 +1,16 @@
 <?php
 
 return [
-    'layout' => 'layouts.layout1',
+    'layout' => 'layouts.layout',
     'headerCss' => [
 //        'home',
-        'common',
+        'bootstrap',
+//        'custom',
     ],
     'headerJs' => [
-        'home',
-        'common',
+        'bootstrap',
+        'jQuery',
+        'custom',
     ],
     'headSection' => [
         'head'
@@ -21,17 +23,13 @@ return [
         'slider'
     ],
     'rightSection' => [
-        'logo_sec'
     ],
     'mainSection' => [
         'products'
     ],
     'bottomSection' => [
-        '6'
     ],
     'footerSection' => [
-    ],
-    'footerCss' => [
     ],
     'footerJs' => [
     ],

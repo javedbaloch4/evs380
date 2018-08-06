@@ -5,7 +5,7 @@
         <!-- loop for css -->
         <!-- loop for js -->
     </head>
-    <body style="background: red">
+    <body>
         <header>
             <div class="container">
                 @foreach($headerSections as $key => $section)

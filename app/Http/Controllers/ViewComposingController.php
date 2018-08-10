@@ -58,11 +58,10 @@ class ViewComposingController extends Controller {
         $this->footerJsData = array_merge($pConfig['footerJs'], $this->footerJsData);
 
 
-        $pageSections = array('headSection', 'headerSection', 'leftSection', 'rightSection', 'mainSection', 'bottomSection', 'footerSection');
+        $pageSections = array('headSection', 'headerSection', 'leftSection', 'rightSection', 'mainSection', 'bottomSection', 'footerSection', 'footSection');
 
         foreach ($pageSections as $key => $section) {
             $components = $pConfig[$section];
-
             if (!empty($components)) {
                 foreach ($components as $key => $component) {
 
@@ -119,7 +118,7 @@ class ViewComposingController extends Controller {
         $this->viewData['headerJsFiles'] = $this->headerJsMapData;
         $this->viewData['footerJsFiles'] = $this->footerJsMapData;
                
-        
+//        dd($this->viewData);
         return view($pConfig['layout'], $this->viewData);
     }
 

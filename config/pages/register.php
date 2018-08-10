@@ -1,38 +1,42 @@
 <?php
 
 return [
-    'layout' => 'layouts.layout1',
-    'layout' => 'layouts.layout1',
+    'layout' => 'layouts.layout',
     'headerCss' => [
 //        'home',
-        'common',
+        'bootstrap',
+        'custom',
     ],
     'headerJs' => [
-        'home',
-        'common',
+        'jQuery',
+        'bootstrap',
+        'custom',
     ],
     'headSection' => [
         'head'
     ],
     'headerSection' => [
         'logo_sec',
-//        'navigation',
+        'navigation',
+        'slider'
     ],
     'leftSection' => [
-//        'slider'
+        'left_categories'
     ],
     'rightSection' => [
-//        'logo_sec'
-    ],
-    'mainSection' => [
         'register'
     ],
+    'mainSection' => [
+        'bottom_slider'
+    ],
     'bottomSection' => [
-//        '6'
     ],
     'footerSection' => [
+        'footer_nav',
+        'footer_info'
     ],
-    'footerCss' => [
+    'footSection' => [
+        'foot'
     ],
     'footerJs' => [
     ],

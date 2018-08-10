@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- loop for seo -->
-        <!-- loop for css -->
-        <!-- loop for js -->
+        @foreach($headSections as $key => $section)
+            @include('components.'.$section)
+        @endforeach
     </head>
-    <body style="background: green">
+    <body>
         <header>
-            <div class="container">
+            <div class="">
                 @foreach($headerSections as $key => $section)
                 @include('components.'.$section)
                 @endforeach
             </div>
         </header>
         <section>
-            <div class="container">
-                <div class="row left">
+            <div class="">
+                <div class="row ">
                     @foreach($leftSections as $key => $section)
                     @include('components.'.$section)
                     @endforeach
                 </div>
-                <div class="row right">
+                <div class="row ">
                     @foreach($rightSections as $key => $section)
                     @include('components.'.$section)
                     @endforeach
@@ -28,7 +28,7 @@
             </div>
         </section>
         <section>
-            <div class="container hidden-xs">
+            <div class=" hidden-xs">
                 @foreach($mainSections as $key => $section)
                 @include('components.'.$section)
                 @endforeach
@@ -38,10 +38,14 @@
         @include('components.'.$section)
         @endforeach
         <footer>
-            <div class="container">
-
+            <div class="">
+                @foreach($footerSections as $key => $section)
+                    @include('components.'.$section)
+                @endforeach
             </div>
         </footer>
-
+        @foreach($footSections as $key => $section)
+            @include('components.'.$section)
+        @endforeach
     </body>
 </html>

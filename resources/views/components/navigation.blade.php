@@ -13,7 +13,7 @@
                 <li class="pull-left"><a href="#">What's New</a></li>
                 <li class="pull-left"><a href="#">Specials</a></li>
                 <li class="pull-left"><a href="{{url('/resgistration')}}">Registration</a></li>
-                <li class="pull-left"><a href="#">Contact</a></li>
+                <li class="pull-left"><a href="{{url('/contact')}}">Contact</a></li>
             </ul>
         </nav>
     </div>

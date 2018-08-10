@@ -9,5 +9,8 @@ class UsersController extends ViewComposingController {
     public function userRegistrationPage() {
         return $this->buildTemplate('register');
     }
+    public function contactPage() {
+        return $this->buildTemplate('contact');
+    }
 
 }

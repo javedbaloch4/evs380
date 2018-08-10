@@ -18,4 +18,4 @@
 // 2nd Arg        Class             @ method
 Route::get('/' , 'HomePageController@homePage');
 Route::get('/resgistration' , 'UsersController@userRegistrationPage');
-//Route::get('/register' , 'HomePageController@homePage');
+Route::get('/contact' , 'UsersController@contactPage');

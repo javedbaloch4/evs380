@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- loop for seo -->
-        <!-- loop for css -->
-        <!-- loop for js -->
+        @foreach($headSections as $key => $section)
+            @include('components.'.$section)
+        @endforeach
     </head>
     <body>
         <header>
@@ -19,8 +19,6 @@
                     @foreach($leftSections as $key => $section)
                     @include('components.'.$section)
                     @endforeach
-                </div>
-                <div class="row right">
                     @foreach($rightSections as $key => $section)
                     @include('components.'.$section)
                     @endforeach
@@ -39,9 +37,13 @@
         @endforeach
         <footer>
             <div class="container">
-
+                @foreach($footerSections as $key => $section)
+                    @include('components.'.$section)
+                @endforeach
             </div>
         </footer>
-
+        @foreach($footSections as $key => $section)
+            @include('components.'.$section)
+        @endforeach
     </body>
 </html>

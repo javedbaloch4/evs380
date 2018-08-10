@@ -21,15 +21,16 @@ return [
         'slider'
     ],
     'leftSection' => [
-        'left_categories'
+//        'left_categories'
     ],
     'rightSection' => [
-        'feature_products'
+//        'register'
     ],
     'mainSection' => [
-        'bottom_slider'
+//        'bottom_slider'
     ],
     'bottomSection' => [
+        
     ],
     'footerSection' => [
         'footer_nav',

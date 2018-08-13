@@ -17,5 +17,6 @@
 //});
 // 2nd Arg        Class             @ method
 Route::get('/' , 'HomePageController@homePage');
-Route::get('/resgistration' , 'UsersController@userRegistrationPage');
+Route::get('/registration' , 'UsersController@userRegistrationPage');
+Route::post('/registration' , 'UsersController@userRegistrationPagePostData');
 Route::get('/contact' , 'UsersController@contactPage');

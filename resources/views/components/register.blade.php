@@ -1,5 +1,14 @@
-<h1>User Registration</h1>
-{!! Form::open(['url' => '/registration', 'files' => true]) !!}
+<div class="col-md-8 col-sm-8">
+    <h1>User Registration</h1>
+    @if(!empty($errors))
+    <ul>
+        @foreach($errors as $key => $error)
+        <li class="btn btn-danger">{{$error}}</li>
+        @endforeach
+    </ul> 
+    @endif
+
+    {!! Form::open(['url' => '/registration', 'files' => true]) !!}
     <div class="form-group">
         {{ Form::label('name:', null) }}
         {{ Form::text('name', '', ['placeholder' => '']) }}
@@ -38,6 +47,8 @@
         {{ Form::label('Profile Image:', null) }}
         {{ Form::file('image') }}
     </div>
-        {{ Form::submit('Register' , ['class' => 'btn btn-success']) }}
-    
-{!! Form::close() !!}
+    {{ Form::submit('Register' , ['class' => 'btn btn-success']) }}
+
+    {!! Form::close() !!}
+
+</div>

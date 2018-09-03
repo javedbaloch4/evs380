@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::get("/users" ,function(){
+//
+//    echo "This is my first api call route";
+//    
+//});
+
+Route::get("/v1" , 'ApiController@buildApiResults');

@@ -4,21 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use Image;
 
 class UsersController extends ViewComposingController {
 
     public function userRegistrationPage() {
         return $this->buildTemplate('register');
     }
+
     public function userRegistrationPagePostData(Request $request) {
-        
-//        dd($_FILES);
-//        dd($_FILES);
-//         dd($request->all());
-         
-//         strlen($string) < 3 
-//         $validatedData = $request->validate();
- 
+
         $rules = [
             'name' => 'required|min:3',
             'user_name' => 'required',
@@ -30,36 +25,45 @@ class UsersController extends ViewComposingController {
             'country' => 'required',
             'image' => 'mimes:jpeg,png',
         ];
-        
-        
-//        $messages = [
-//            'name.required' => "name Req",
-//            'name.min' => "Value Min",
-//        ];
-        
-//        validator($rules, $rules)
-//        dd($request->all());
-//        $validation_res = Validator::make($request->all(),$rules , $messages);
-        
+
         $image = $request->file('image');
-//        dd($image->getClientOriginalExtension());
         $file_name = $request->get('user_name') . '.' . $image->getClientOriginalExtension();
-//        dd($file_name);
-//        dd($request->file('image'));
-        if(!is_dir(public_path('/users'))){
+        if (!is_dir(public_path('/users'))) {
             mkdir(public_path('/users'));
         }
-        if(!is_dir(public_path('/users/' . $request->get('user_name')))){
+        if (!is_dir(public_path('/users/' . $request->get('user_name')))) {
             mkdir(public_path('/users/' . $request->get('user_name')));
         }
-        
-        
-        $image->move(public_path('/users/' . $request->get('user_name')) , $file_name);
-//        if(!is_dir())
-        dd('here');
-        $validation_res = Validator::make($request->all(),$rules );
-        
+
+
+//        $image->move(public_path('/users/' . $request->get('user_name')) , $file_name);
+//        dd($request->file('image')->path());
+        $full_img_path = public_path('/users/' . $request->get('user_name')) . '/' . $file_name;
+
+        $image_processig = Image::make($request->file('image')->path());
+
+
+        $image_processig->resize(800, 400);
+
+        // create a new Image instance for inserting
+        $watermark = Image::make(public_path('/img/laravel.png'));
+
+        $image_processig->insert($watermark, 'center');
+
+        $image_processig->save($full_img_path);
+//        dd($image_processig);
+        $validation_res = Validator::make($request->all(), $rules);
+
         $this->viewData['errors'] = $validation_res->messages()->all();
+
+        
+//        $new = array ();
+//        
+//        $new['class']['10']['name'] = 'abc';  
+//        $new['class']['11']['name'] = 'abcd';  
+//        $new['class']['12']['name'] = 'abcf';  
+//        $new['class']['13']['name'] = 'abcg';  
+//        dd(json_encode($new));
         
         
         dd($request->all());
@@ -72,6 +76,7 @@ class UsersController extends ViewComposingController {
 //        dd($errors);
         return $this->buildTemplate('register');
     }
+
     public function contactPage() {
         return $this->buildTemplate('contact');
     }

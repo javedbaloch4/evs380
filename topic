@@ -1,3 +1,12 @@
 PHP artisan Commonds: 
 
 Create New Controller => PHP artisan make:controller HomePageController
+
+
+JSON 
+
+{"class":{"10":{"name":"abc"},"11":{"name":"abcd"},"12":{"name":"abcf"},"13":{"name":"abcg"}}}
+{"class":{"10":{"name":"abc","name":"abcd"}}}
+{"breakfast":{"food":{"name":"abc", "price":112, "description" : "asdad"}}}
+
+{"api_token":"sasadsasd","api_key":"abc","model":"user","action":"addToUser","params":{"name":"saqib","user_name":"admin123"}}

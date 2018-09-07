@@ -10,3 +10,14 @@ JSON
 {"breakfast":{"food":{"name":"abc", "price":112, "description" : "asdad"}}}
 
 {"api_token":"sasadsasd","api_key":"abc","model":"user","action":"addToUser","params":{"name":"saqib","user_name":"admin123"}}
+
+
+http://gtjourney.gatech.edu/gt-devhub/documentation/restful-api-structure
+
+http://localhost/evs/evs380/computershop/public/api/v1?req={%22api_token%22:%22f1a554322accaaf3e8a0c4b20ae290e080f21207%22,%22api_key%22:%22e665ec23f566a5c1d2b10d034afa931e%22,%22model%22:%22user%22,%22action%22:%22addToUser%22,%22params%22:{%22name%22:%22saqib%22,%22user_name%22:%22admin123%22,%22password%22:%22saqib123%22,%22profile_image%22:%22saqib123.png%22}}
+
+get => http://localhost/evs/evs380/computershop/public/api/v1/users   // All Users List
+get =>  http://localhost/evs/evs380/computershop/public/api/v1/users/2   // All Users List
+post =>  http://localhost/evs/evs380/computershop/public/api/v1/users   // All Users List
+DELETE  =>  http://localhost/evs/evs380/computershop/public/api/v1/users/4   // All Users List
+PUT  =>  http://localhost/evs/evs380/computershop/public/api/v1/users/4   // All Users List

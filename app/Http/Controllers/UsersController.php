@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Image;
+use App\Services\BuildApiService;
+use App\Http\Helpers\ApiCall;
 
 class UsersController extends ViewComposingController {
 
@@ -56,7 +58,25 @@ class UsersController extends ViewComposingController {
 
         $this->viewData['errors'] = $validation_res->messages()->all();
 
+        $params = array();
+        $params['name'] = $request->get('name');
+        $params['user_name'] = $request->get('user_name');
+        $params['email'] = $request->get('email');
+        $params['password'] = sha1($request->get('password'));
+        $params['gender'] = $request->get('gender');
+        $params['dob'] = $request->get('dob');
+        $params['country'] = $request->get('country');
+        $params['image'] = $file_name;
         
+        
+        $buildApiService['user_registration'] = new BuildApiService('user', 'addToUser', $params);
+        
+        
+        
+        $apiCall = new ApiCall();
+        
+        $result = $apiCall->runApiCall($buildApiService);
+        dd(json_encode($buildApiService));
 //        $new = array ();
 //        
 //        $new['class']['10']['name'] = 'abc';  

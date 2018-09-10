@@ -21,3 +21,10 @@ get =>  http://localhost/evs/evs380/computershop/public/api/v1/users/2   // All 
 post =>  http://localhost/evs/evs380/computershop/public/api/v1/users   // All Users List
 DELETE  =>  http://localhost/evs/evs380/computershop/public/api/v1/users/4   // All Users List
 PUT  =>  http://localhost/evs/evs380/computershop/public/api/v1/users/4   // All Users List
+
+
+
+http://php.net/manual/en/function.curl-setopt.php
+
+
+http://gtjourney.gatech.edu/gt-devhub/documentation/restful-api-structure

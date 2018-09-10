@@ -20,3 +20,10 @@ use Illuminate\Http\Request;
 //});
 
 Route::get("/v1" , 'ApiController@buildApiResults');
+Route::post("/v1" , 'ApiController@buildApiResults');
+
+
+Route::get('/v2' , function(){
+    
+    
+});
